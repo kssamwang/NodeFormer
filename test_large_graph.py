@@ -83,7 +83,7 @@ for i in range(args.rb_order - 1):
 ### Evaluation ###
 
 print("Load model checkpoint...")
-checkpoint_dir = f'../model/{args.dataset}-nodeformer.pkl'
+checkpoint_dir = f'/back-up/wsy/gfdatasets/NodeFormer/model/{args.dataset}-nodeformer.pkl'
 checkpoint = torch.load(checkpoint_dir)
 model.load_state_dict(checkpoint)
 

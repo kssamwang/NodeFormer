@@ -303,7 +303,7 @@ def load_ogb_dataset(data_dir, name):
     return dataset
 
 def load_amazon2m_dataset(data_dir):
-    ogb_dataset = NodePropPredDataset(name='ogbn-products', root=f'{data_dir}/ogb')
+    ogb_dataset = NodePropPredDataset(name='ogbn-products', root=os.path.join(data_dir,'ogb'))
     dataset = NCDataset('amazon2m')
     dataset.graph = ogb_dataset.graph
     dataset.graph['edge_index'] = torch.as_tensor(dataset.graph['edge_index'])
@@ -594,7 +594,7 @@ def load_20news(data_dir, n_remove=0):
     from sklearn.feature_extraction.text import TfidfTransformer
     import pickle as pkl
 
-    if path.exists(data_dir + '20news/20news.pkl'):
+    if os.path.exists(data_dir + '20news/20news.pkl'):
         data = pkl.load(open(data_dir + '20news/20news.pkl', 'rb'))
     else:
         categories = ['alt.atheism',

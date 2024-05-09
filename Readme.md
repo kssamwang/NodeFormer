@@ -126,6 +126,15 @@ and 20News-Group is available at [Scikit-Learn](https://jmlr.org/papers/v12/pedr
 
 1. Install the required package according to `requirements.txt`
 
+```sh
+conda create -n gf2 python=3.8 -y
+conda activate gf2
+pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+pip install googledrivedownloader==0.4 networkx==2.6.1 numpy==1.19.2 ogb==1.3.1 scikit_learn==1.1.3 scipy==1.6.2
+pip install torch_geometric==1.7.2
+pip install torch_scatter==2.0.7 torch_sparse==0.6.10  -f https://data.pyg.org/whl/torch-1.9.0+cu111.html
+```
+
 2. Create a folder `../data` and download the datasets from [here](https://drive.google.com/drive/folders/1sWIlpeT_TaZstNB5MWrXgLmh522kx4XV?usp=sharing)
 (For large graph datasets Proteins and Amazon2M, the datasets will be automatically downloaded)
 
